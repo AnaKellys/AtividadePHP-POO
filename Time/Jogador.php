@@ -1,56 +1,33 @@
 <?php
 
-
-use Source\Time\Pessoas;
+namespace Source\Time;
+use Source\Time\Profissional;
+use Source\Time\Posicao;
 
 class Jogador extends Profissional
 {
-  public string $apelido;
   public string $camisa;
+  public float $peso;
+  public float $altura;
 
-  public function __construct(string $apelido, string $camisa)
+  public Posicao $posicao;
+
+  public function __construct(string $nome, int $idade, float $peso, float $altura,
+   string $camisa, string $profissional, float $salario, Posicao $posicao)
   {
-    $this->apelido = $apelido;
+    parent::__construct($nome, $idade, $profissional, $salario);
     $this->camisa = $camisa;
-  }
-  
-  public function posicaoJogadores(string $lugar){
-    
+    $this->peso = $peso;
+    $this->altura = $altura;
+    $this->posicao = $posicao;
   }
 
-    
-  
+  // public function posicaoJogadores(string $posicao, string $titularOuReserva): bool
+  // {
+  //   if ($posicao === 'atacante' && $titularOuReserva === 'titular') {
+  //     return true;
+  // }
+  // return false;
+  // }
+
 }
-
-
-
-
-
-// public function __destruct()
-//   {
-//     self::$numeroDeContas--;
-//   }
-
-
-//   <?php
-
-// namespace Banco\Modelo\Conta;
-
-// abstract class Conta
-// {
-//   private Titular $titular;
-//   protected float $saldo;
-//   private static int $numeroDeContas = 0;
-
-//   public function __construct(Titular $titular)
-//   {
-//     $this->titular = $titular;
-//     $this->saldo = 0;
-
-//     self::$numeroDeContas++;
-//   }
-
-//   public function __destruct()
-//   {
-//     self::$numeroDeContas--;
-//   }

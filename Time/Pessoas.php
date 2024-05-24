@@ -4,18 +4,29 @@ namespace Source\Time;
 
 abstract class Pessoas
 {
-  public string $nome;
-  public string $idade;
-  public string $dataNascimento;
-  public string $peso;
-  public string $altura;
+  private string $nome;
+  private int $idade;
 
-  public function __construct(string $nome, string $idade, string $dataNascimento, string $peso, string $altura)
+  public function __construct(string $nome, int $idade)
   {
-   $this->nome = $nome;
-   $this->idade = $idade; 
-   $this->dataNascimento = $dataNascimento;
-   $this->peso = $peso;
-   $this->altura = $altura;
+    $this->nome = $nome;
+    $this->idade = $idade;
   }
+
+  public function getNome(): string
+  {
+    return $this->nome;
+  }
+
+
+  public function getIdade(): string
+  {
+    return $this->idade;
+  }
+
+
+  // public static function recuperarPessoasEquipe(): int
+  // {
+  //   return self::$pessoasEquipe;
+  // }
 }
