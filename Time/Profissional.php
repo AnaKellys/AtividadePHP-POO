@@ -6,7 +6,7 @@ use Source\Time\Pessoas;
 class Profissional extends Pessoas
 {
 
-  public string $profissional;
+  private string $profissional;
   private float $salario;
 
   public function __construct(string $nome, float $idade, string $profissional, float $salario)
@@ -15,21 +15,20 @@ class Profissional extends Pessoas
     $this->profissional = $profissional;
     $this->salario = $salario;
   }
+
+  public function getSalario(): string
+  {
+    return $this->salario;
+  }
+
+  public function getProfissional(): string
+  {
+    return $this->profissional;
+  }
+
+  public function __toString()
+  {
+    return "Nome: {$this->getNome()},\nProfissão: {$this->getProfissional()},\nSalário: {$this->getSalario()}.\n";
+  }
+
 }
-
-
-// private static int $numeroDePessoas = 1;
-
-// public function __construct(Titular $titular)
-// {
-//   $this->titular = $titular;
-//   $this->saldo = 0;
-
-//   self::$numeroDeContas++;
-// }
-
-
-// public static function recuperarNumeroDeContas(): int
-// {
-//   return self::$numeroDeContas;
-// }

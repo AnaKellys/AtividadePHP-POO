@@ -2,12 +2,14 @@
 
 namespace Source\Time;
 
+use Source\Time\Exceptions\ExceptionQuantidadeJogadores;
+
 class Elenco
 {
-  public array $listaDePessoas;
-  private array $listaJogadores;
+  public array $listaDePessoas = [];
+  private array $listaJogadores = [];
 
-  public const QUANTIDADE_LIMITE_JOGADORES = 11; 
+  public const QUANTIDADE_LIMITE_JOGADORES = 11;
 
   private function quantidadeTitulares(): int
   {
@@ -22,42 +24,32 @@ class Elenco
 
   public function adicionaJogador(Jogador $jogador)
   {
-    if ($jogador->posicao->isTitular() && $this->quantidadeTitulares() === self::QUANTIDADE_LIMITE_JOGADORES ) {
-      // throw new 
+    if ($jogador->posicao->isTitular() && $this->quantidadeTitulares() >= self::QUANTIDADE_LIMITE_JOGADORES) {
+      throw new ExceptionQuantidadeJogadores();
     }
     $this->listaJogadores[] = $jogador;
   }
 
-  public function exibeJogador(): void
+  public function adicionaProfissional(Profissional $profissional)
+  {
+    $this->listaDePessoas[] = $profissional;
+  }
+
+  public function exibeJogadores()
   {
     foreach ($this->listaJogadores as $jogador) {
-      print "{$jogador->getNome()}\n";
+      print $jogador->__toString() . "\n";
     }
   }
 
-  // formato da impressão
-  // public function __toString(): string
-  // {
-  //   return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
-  //   // implode(", " ,get_object_vars($this));
-  // }
-
-
-  // public function adicionaProfissional(Profissional $profissional)
-  // {
-
-  // }
-
-  // for $jogador 
-  //   print "nome Jogador: $jogador->getNome(), camisa: $jogador->"
+  public function exibeProfissional()
+  {
+    foreach ($this->listaDePessoas as $profissional) {
+      print $profissional->__toString() . "\n";
+    }
+  }
 
   // public function removeProfissional(Profissional $profissional)
   // {
-
   // }
 }
-
-    // public function __destruct()
-    // {
-    //   self::$numeroDePessoas--;
-    // }

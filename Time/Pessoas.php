@@ -18,15 +18,8 @@ abstract class Pessoas
     return $this->nome;
   }
 
-
   public function getIdade(): string
   {
     return $this->idade;
   }
-
-
-  // public static function recuperarPessoasEquipe(): int
-  // {
-  //   return self::$pessoasEquipe;
-  // }
 }

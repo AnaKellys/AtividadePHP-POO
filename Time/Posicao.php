@@ -22,18 +22,3 @@ class Posicao
     $this->titular = $titular;
   }
 }
-
-
-
-
-
-// IDEIA:
-
-  // public function trocaPosicao(string $posicao, string $titularOuReserva): void
-  // {
-  //   if ($valorADepositar < 0) {
-  //     print "Valor precisa ser positivo";
-  //     return;
-  //   }
-  //   $this->saldo += $valorADepositar;
-  // }

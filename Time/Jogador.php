@@ -1,33 +1,43 @@
 <?php
 
 namespace Source\Time;
+
 use Source\Time\Profissional;
 use Source\Time\Posicao;
 
 class Jogador extends Profissional
 {
-  public string $camisa;
-  public float $peso;
-  public float $altura;
+  private string $numeroCamisa;
+  private float $peso;
+  private float $altura;
 
   public Posicao $posicao;
 
-  public function __construct(string $nome, int $idade, float $peso, float $altura,
-   string $camisa, string $profissional, float $salario, Posicao $posicao)
-  {
+  public function __construct(
+    string $nome,
+    int $idade,
+    float $peso,
+    float $altura,
+    string $numeroCamisa,
+    string $profissional,
+    float $salario,
+    Posicao $posicao
+  ) {
     parent::__construct($nome, $idade, $profissional, $salario);
-    $this->camisa = $camisa;
+    $this->numeroCamisa = $numeroCamisa;
     $this->peso = $peso;
     $this->altura = $altura;
     $this->posicao = $posicao;
   }
 
-  // public function posicaoJogadores(string $posicao, string $titularOuReserva): bool
-  // {
-  //   if ($posicao === 'atacante' && $titularOuReserva === 'titular') {
-  //     return true;
-  // }
-  // return false;
-  // }
+  public function getNumeroCamisa(): string
+  {
+    return $this->numeroCamisa;
+  }
 
+  public function __toString()
+  {
+    $condicao = $this->posicao->isTitular() ? 'Titular' : 'Reserva';
+    return "Nome: {$this->getNome()},\nCamisa: {$this->getNumeroCamisa()},\nPosição: {$this->posicao->getPosicao()},\nTitular ou reserva: {$condicao}.\n";
+  }
 }
