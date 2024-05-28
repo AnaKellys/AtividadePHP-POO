@@ -45,9 +45,7 @@ comitiva de um time de futebol.
 - Jogador = Número camisa, peso, altura
 - Profissional = profissão, salário.
 
-
 - Classes Posição (Goleiro, Zagueiro etc) =  posição, titularOuReserva.
-
 
 Por fim criar uma classe chamada Elenco, que teria um atributo chamado lista de pessoas e um comportamento para imprimir o elenco.
 
@@ -59,5 +57,3 @@ Como resultado é necessário instanciar um elenco completo o mais próximo da r
 
 Extra
 A classe Elenco pode ser mais completa e inteligente do que apenas imprimir a listagem, ela pode ser responsável por armazenar e manipular todos os objetos das classes Pessoa, Jogador, Profissional e suas subclasses.
-
-colocar int em $numeroCamisa
