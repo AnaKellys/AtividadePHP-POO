@@ -21,21 +21,18 @@ Analista de Desempenho
 
 
 
-Ficha 
+Exemplos de Formato:
 
+------- Lista Jogadores -------
+Nome: lucas,
+Camisa: 5,
+Posição: Volante,
+Titular ou reserva: Titular.
 
-Exemplos de Formato
-Dados Básicos
-Nome Completo: João da Silva
-Altura: 1,75 m
-Peso: 70 kg
-
-Contato
-Endereço: Rua Exemplo, 123, São Paulo, SP, Brasil
-Telefone: +55 11 1234-5678
-E-mail: joaozinho@example.com
-Agente: Maria Souza (+55 11 9876-5432)
-
+----- Lista Profissionais -----
+Nome: Amanda,
+Profissão: Fisioterapeuta,
+Salário: 3300.
 
 
 
